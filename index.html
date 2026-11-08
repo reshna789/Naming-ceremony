@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Little Lotus | Naming Ceremony</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============================================================ -->
+  <!-- PINTEREST-INSPIRED 5-SONG SPOTIFY MUSIC PLAYER              -->
+  <!-- ============================================================ -->
+  <div class="music-player-wrapper" id="musicPlayerWrapper">
+    <!-- Collapsed Floating Pill Launcher -->
+    <button class="music-pill-toggle" id="musicPillToggle" aria-label="Open Music Player">
+      <span class="music-pill-icon">♫</span>
+      <span class="music-pill-text" id="musicPillText">Song One</span>
+      <span class="music-pill-status" id="musicPillStatus">▶</span>
+    </button>
+
+    <!-- Main Aesthetic Player Card -->
+    <div class="music-player" id="musicPlayer" role="region" aria-label="Spotify Music Player">
+
+      <!-- Decorative Doodles -->
+      <span class="music-doodle music-doodle-tl" aria-hidden="true">✦</span>
+      <span class="music-doodle music-doodle-tr" aria-hidden="true">♡</span>
+
+      <!-- Spotify-Inspired Header -->
+      <div class="music-player-header">
+        <div class="music-spotify-brand">
+          <svg class="music-spotify-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"
+            aria-hidden="true">
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.306c-.216.353-.674.466-1.027.25-2.815-1.72-6.358-2.109-10.534-1.155-.403.092-.806-.157-.898-.56-.092-.403.157-.806.56-.898 4.567-1.042 8.498-.6 11.649 1.336.353.216.466.674.25 1.027zm1.468-3.264c-.272.441-.849.58-1.29.308-3.223-1.982-8.136-2.553-11.948-1.396-.499.151-1.03-.134-1.182-.633-.151-.499.134-1.03.633-1.182 4.358-1.323 9.775-.688 13.479 1.589.441.272.58.849.308 1.314zm.126-3.41c-3.865-2.295-10.237-2.507-13.916-1.39-.594.181-1.226-.157-1.407-.751-.181-.594.157-1.226.751-1.407 4.237-1.286 11.276-1.04 15.719 1.597.534.317.712 1.011.395 1.545-.317.534-1.011.712-1.542.406z" />
+          </svg>
+          <span class="music-header-title">SPOTIFY · PLAYLIST</span>
+          <span class="music-header-doodle">⋆｡˚</span>
+        </div>
+        <button class="music-minimize-btn" id="musicMinimizeBtn" title="Minimize player" aria-label="Minimize player">
+          <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2.2" fill="none">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Large Square Album Artwork -->
+      <div class="music-artwork">
+        <img id="musicArtworkImg" src="image/b1.jpeg" alt="Album Artwork" class="music-artwork-img">
+        <div class="music-artwork-overlay">
+          <span class="music-artwork-badge">♫ OUR LITTLE ONE</span>
+        </div>
+      </div>
+
+      <!-- Track Details & Favourite Heart Icon -->
+      <div class="music-info-row">
+        <div class="music-track-details">
+          <h4 class="music-title" id="musicTitle">Song One</h4>
+          <p class="music-artist" id="musicArtist">Artist One</p>
+        </div>
+        <button class="music-favourite-btn" id="musicFavBtn" aria-label="Favourite song" title="Save to favourites">
+          <svg class="music-fav-heart" viewBox="0 0 24 24" width="22" height="22">
+            <path
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Horizontal Progress Bar & Timestamps -->
+      <div class="music-progress-wrapper">
+        <div class="music-progress" id="musicProgressBar" role="slider" aria-label="Music progress slider"
+          aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+          <div class="music-progress-filled" id="musicProgressFilled"></div>
+          <div class="music-progress-thumb" id="musicProgressThumb"></div>
+        </div>
+        <div class="music-time-row">
+          <span class="music-time" id="musicCurrentTime">0:00</span>
+          <span class="music-time" id="musicTotalTime">0:00</span>
+        </div>
+      </div>
+
+      <!-- Playback Controls (Shuffle, Prev, Black Play/Pause, Next, Repeat) -->
+      <div class="music-controls">
+        <!-- Shuffle Button -->
+        <button class="music-ctrl-btn music-btn-shuffle" id="musicShuffleBtn" aria-label="Shuffle playback"
+          title="Shuffle">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z" />
+          </svg>
+          <span class="music-ctrl-indicator"></span>
+        </button>
+
+        <!-- Previous Button -->
+        <button class="music-ctrl-btn music-btn-prev" id="musicPrevBtn" aria-label="Previous track" title="Previous">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
+          </svg>
+        </button>
+
+        <!-- Large Circular Black Play/Pause Button -->
+        <button class="music-play-btn" id="musicPlayBtn" aria-label="Play song" title="Play">
+          <svg class="music-icon-play" id="musicIconPlay" viewBox="0 0 24 24" width="22" height="22"
+            fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          <svg class="music-icon-pause" id="musicIconPause" viewBox="0 0 24 24" width="22" height="22"
+            fill="currentColor" style="display: none;">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+          </svg>
+        </button>
+
+        <!-- Next Button -->
+        <button class="music-ctrl-btn music-btn-next" id="musicNextBtn" aria-label="Next track" title="Next">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
+          </svg>
+        </button>
+
+        <!-- Repeat Button -->
+        <button class="music-ctrl-btn music-btn-repeat" id="musicRepeatBtn" aria-label="Repeat track" title="Repeat">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z" />
+          </svg>
+          <span class="music-ctrl-indicator"></span>
+        </button>
+      </div>
+
+      <!-- Spotify-Inspired Waveform / Barcode Code Decoration at the Bottom -->
+      <div class="music-waveform-decoration" id="musicWaveformDecoration" aria-hidden="true">
+        <span class="music-wave-doodle">♡</span>
+        <div class="music-spotify-code">
+          <svg class="music-code-logo" viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.306c-.216.353-.674.466-1.027.25-2.815-1.72-6.358-2.109-10.534-1.155-.403.092-.806-.157-.898-.56-.092-.403.157-.806.56-.898 4.567-1.042 8.498-.6 11.649 1.336.353.216.466.674.25 1.027zm1.468-3.264c-.272.441-.849.58-1.29.308-3.223-1.982-8.136-2.553-11.948-1.396-.499.151-1.03-.134-1.182-.633-.151-.499.134-1.03.633-1.182 4.358-1.323 9.775-.688 13.479 1.589.441.272.58.849.308 1.314zm.126-3.41c-3.865-2.295-10.237-2.507-13.916-1.39-.594.181-1.226-.157-1.407-.751-.181-.594.157-1.226.751-1.407 4.237-1.286 11.276-1.04 15.719 1.597.534.317.712 1.011.395 1.545-.317.534-1.011.712-1.542.406z" />
+          </svg>
+          <div class="music-code-bars" id="musicCodeBars">
+            <span style="height: 8px;"></span>
+            <span style="height: 16px;"></span>
+            <span style="height: 24px;"></span>
+            <span style="height: 12px;"></span>
+            <span style="height: 28px;"></span>
+            <span style="height: 9px;"></span>
+            <span style="height: 20px;"></span>
+            <span style="height: 26px;"></span>
+            <span style="height: 15px;"></span>
+            <span style="height: 11px;"></span>
+            <span style="height: 22px;"></span>
+            <span style="height: 29px;"></span>
+            <span style="height: 13px;"></span>
+            <span style="height: 18px;"></span>
+            <span style="height: 25px;"></span>
+            <span style="height: 9px;"></span>
+            <span style="height: 24px;"></span>
+            <span style="height: 14px;"></span>
+            <span style="height: 20px;"></span>
+            <span style="height: 10px;"></span>
+          </div>
+        </div>
+        <span class="music-wave-doodle">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+
+    <button class="menu-btn" id="menuToggle" aria-label="Open menu">
+      ☰
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-small">A Little Princess Is Here</p>
+
+      <h1>
+        Welcome
+        <span>to</span>
+        <b> Naming Ceremony</b>
+      </h1>
+
+      <p>With hearts full of love, we invite you to celebrate</p>
+
+      <p class="hero-date">SUNDAY · 15 NOVEMBER 2026</p>
+
+      <a href="#venue" class="hero-button">View Invitation</a>
+    </div>
+  </header>
+
+  <!-- INTRODUCTION -->
+  <section class="intro" id="about">
+    <div class="intro-content">
+      <p class="subtitle">A Beautiful Day of Blessing</p>
+
+      <div class="flower">❀</div>
+
+      <h2>We're Adding a Little more <br><b style="color: rgb(218, 57, 57);">LOVE!</b><br>to my Family</h2>
+
+      <p>
+        Our family has been blessed with the arrival of a precious little
+        girl. As we prepare to give our little princess her beautiful name,
+        we would love to celebrate this special moment with you.
+      </p>
+
+      <div class="flower">♡</div>
+
+      <h3>Reshma &amp; Jishnu </h3>
+
+      <p>Request the pleasure of your presence and blessings.</p>
+    </div>
+
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown-section">
+    <div class="section-header">
+      <p class="subtitle">The Celebration Begins In</p>
+      <h2>Counting Every Moment</h2>
+    </div>
+
+    <div class="countdown">
+      <div class="time-card">
+        <strong id="days" style="color: #0A2947;">00</strong>
+        <span>Days</span>
+      </div>
+
+      <div class="time-card">
+        <strong id="hours" style="color: #0A2947;">00</strong>
+        <span>Hours</span>
+      </div>
+
+      <div class="time-card">
+        <strong id="minutes" style="color: #0A2947;">00</strong>
+        <span>Minutes</span>
+      </div>
+
+      <div class="time-card">
+        <strong id="seconds" style="color: #0A2947;">00</strong>
+        <span>Seconds</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LITTLE ONE -->
+  <section class="story">
+    <div class="story-grid">
+      <div class="lotus-art">
+        <img src="image/f1.jpeg">
+      </div>
+
+      <div class="story-text">
+        <p class="subtitle">Our Little Miracle</p>
+
+        <h2>A Tiny Little Flower, A Lifetime of Love</h2>
+
+        <p>
+          A little hand to hold, a little heart to love, and a beautiful
+          new reason to smile every day.
+        </p>
+
+        <p>
+          Our little princess has filled our lives with happiness.
+          We invite you to be part of this memorable day and shower
+          her with your love and blessings.
+        </p>
+
+        <div class="flower">❀ ♡ ❀</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT SCHEDULE -->
+  <section class="events" id="events">
+    <div class="section-header">
+      <p class="subtitle">A Day Filled With Love</p>
+      <h2>Celebration Schedule</h2>
+    </div>
+
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-icon">❀</div>
+        <h3>Naming Ceremony</h3>
+        <div class="event-time">12:00 PM – 12:25 PM </div>
+        <p>
+          Join us as we lovingly announce our little girl's name.
+          Your blessings mean the world to us.
+        </p>
+      </div>
+
+      <div class="event-card">
+        <div class="event-icon">♡</div>
+        <h3>Lunch</h3>
+        <div class="event-time">12:45 PM </div>
+        <p>
+          Stay back and enjoy a delicious meal with our family
+          as we celebrate this precious occasion.
+        </p>
+      </div>
+
+      <div class="event-card">
+        <div class="event-icon">✿</div>
+        <h3>Blessings</h3>
+        <div class="event-time">ALL DAY </div>
+        <p>
+          Share your smiles, warm wishes and blessings with
+          our little flower.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-header">
+      <p class="subtitle">Meet Our Little Bundle of Joy</p>
+      <h2><b>Little Moments</b></h2>
+      <p>Capturing the sweetest moments of our little one's beautiful journey, filled with love, laughter, and countless
+        blessings!</p>
+    </div>
+
+    <!-- Infinite auto-scroll gallery carousel -->
+    <div class="carousel-viewport" id="galleryCarousel">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-item">
+
+          <img src="image/b1.jpeg" alt="Baby photo 1" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b2.jpeg" alt="Baby photo 2" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b3.jpeg" alt="Baby photo 3" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b4.jpeg" alt="Baby photo 4" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b5.jpeg" alt="Baby photo 5" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b6.jpeg" alt="Baby photo 6" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b7.jpeg" alt="Baby photo 7" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b8.jpeg" alt="Baby photo 8" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b9.jpeg" alt="Baby photo 9" loading="lazy">
+
+        </div>
+
+        <div class="carousel-item">
+
+          <img src="image/b10.jpeg" alt="Baby photo 1 clone" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b11.jpeg" alt="Baby photo 2 clone" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b12.jpeg" alt="Baby photo 3 clone" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b13.jpeg" alt="Baby photo 4 clone" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b14.jpeg" alt="Baby photo 5 clone" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b15.jpeg" alt="Baby photo 6 clone" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b16.jpeg" alt="Baby photo 7 clone" loading="lazy">
+
+        </div>
+
+
+
+        <div class="carousel-item">
+
+          <img src="image/b17.jpeg" alt="Baby photo 8 clone" loading="lazy">
+
+        </div>
+
+
+        <div class="carousel-item">
+
+          <img src="image/b18.jpeg" alt="Baby photo 9 clone" loading="lazy">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLESSING QUOTE -->
+  <section class="quote-section">
+    <div class="quote-symbol">“</div>
+
+    <h2>
+      A tiny flower can fill an entire world with love.
+    </h2>
+
+    <p style="margin-top:20px; letter-spacing:3px; font-size:11px;">
+      WITH LOVE &amp; BLESSINGS
+    </p>
+  </section>
+
+  <!-- VENUE -->
+  <section class="venue" id="venue">
+    <div class="section-header">
+      <p class="subtitle">We Can't Wait to See You</p>
+      <h2>Join Us at Our Home</h2>
+    </div>
+
+    <div class="venue-card">
+      <h3>Our Residence</h3>
+
+      <p>
+        House No. VRCA 16/2,<br>
+        Near Government HSS School,<br>
+        Vazhappally, Changanassery,<br>
+        Kottayam, Kerala – 686103
+      </p>
+
+      <a class="map-button" href="https://maps.app.goo.gl/c7i9xoGGkyfqQvwm8" target="_blank" rel="noopener">
+        View on Google Maps
+      </a>
+
+      <p style="margin-top:20px;">
+        Sunday, 15 November 2026<br>
+        Ceremony: 12:00 PM – 12:25 PM<br>
+        Lunch: 12:45 PM
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT AND WISHES -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+
+      <!-- Section Header -->
+      <div class="contact-header">
+        <p class="contact-subtitle">We Are Here to Help</p>
+        <h2 class="contact-title">Contact the Family</h2>
+        <p class="contact-desc">
+          For directions or any details about the celebration, please get in touch.
+        </p>
+      </div>
+
+      <!-- Three Contact Cards in One Horizontal Row -->
+      <div class="contact-cards-row">
+
+        <!-- Card 1: Call Now -->
+        <a href="tel:+917306665906" class="contact-card action-card" aria-label="Call Reshma and Jishnu">
+          <div class="contact-icon-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#165823" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="contact-card-title"><b>Call Now</b></h3>
+        </a>
+
+        <!-- Card 2: WhatsApp -->
+        <a href="https://wa.me/917306665906?text=Hello%20Reshma%20and%20Jishnu" target="_blank" rel="noopener"
+          class="contact-card action-card" aria-label="Chat on WhatsApp">
+          <div class="contact-icon-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#165823" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="contact-card-title"><b>WhatsApp &ndash; Chat with Us</b></h3>
+        </a>
+
+        <!-- Card 3: Venue -->
+        <div class="contact-card venue-card">
+          <div class="contact-icon-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#165823" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="contact-card-title"><b>Venue</b></h3>
+
+          <!-- QR Code embedded inside Venue Card -->
+          <div class="venue-qr-wrap">
+            <img src="assets/images/venue-qr.png" alt="Scan for venue directions on Google Maps" class="venue-qr-img"
+              width="95" height="95" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- One Large Wishes Form Card Centered Directly Underneath -->
+      <div class="contact-form-card">
+        <h3 class="form-title">Send Your Blessings</h3>
+        <p class="form-description">Leave a beautiful wish for our little princess.</p>
+
+        <form id="wishForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="guestName">Your Name</label>
+              <input type="text" id="guestName" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guestContact">Phone / Email</label>
+              <input type="text" id="guestContact" placeholder="Enter phone or email">
+            </div>
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="guestMessage">Your Wishes for the Baby</label>
+            <textarea id="guestMessage" rows="4" placeholder="Write your blessings here..." required></textarea>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="submit-button">
+              ♡ Send Wishes on WhatsApp
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-title">Our Little Lotus</div>
+
+    <p>With love, Reshma &amp; Jishnu </p>
+
+    <p>15 · 11 · 2026</p>
+
+    <p>A little name, a lifetime of love. ❀</p>
+  </footer>
+
+  <!-- MUSIC MESSAGE BOX -->
+  <div class="music-msg-box" id="musicMsgBox" aria-label="Play music">
+    <span class="music-msg-icon" aria-hidden="true">♫</span>
+    <span class="music-msg-text" id="musicMsgText">Tap to play music ♡</span>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 60) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!navbar.contains(event.target)) {
+        navLinks.classList.remove("active");
+      }
+    });
+
+    // Countdown timer
+    const targetDate = new Date("November 15, 2026 12:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        ["days", "hours", "minutes", "seconds"].forEach(function (id) {
+          document.getElementById(id).textContent = "00";
+        });
+        return;
+      }
+
+      document.getElementById("days").textContent =
+        Math.floor(difference / (1000 * 60 * 60 * 24));
+
+      document.getElementById("hours").textContent =
+        Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+      document.getElementById("minutes").textContent =
+        Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+
+      document.getElementById("seconds").textContent =
+        Math.floor((difference % (1000 * 60)) / 1000);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Wishes form (WhatsApp submission)
+    document.getElementById("wishForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("guestName").value.trim();
+      const contact = document.getElementById("guestContact").value.trim();
+      const message = document.getElementById("guestMessage").value.trim();
+
+      const phoneNumber = "917306665906";
+
+      const whatsappMessage =
+        "Hello Reshma & Jishnu! ❤️\n\n" +
+        "Name: " + name + "\n" +
+        (contact ? "Contact: " + contact + "\n\n" : "\n") +
+        "My Wishes for Your Little Princess:\n" +
+        message + "\n\n" +
+        "Congratulations! 💗";
+
+      const whatsappURL =
+        "https://wa.me/" + phoneNumber +
+        "?text=" + encodeURIComponent(whatsappMessage);
+
+      window.open(whatsappURL, "_blank");
+    });
+
+    /* ============================================================ */
+    /* PINTEREST SPOTIFY 5-SONG MUSIC PLAYER SCRIPT                */
+    /* ============================================================ */
+
+    /* ------------------------------------------------------------ */
+    /* 1. PLAYLIST DATA (Easily edit your 5 songs here)            */
+    /* ------------------------------------------------------------ */
+    const playlist = [
+      {
+        title: "Thinkal Poovin",
+        artist: "Justin Prabhakaran",
+        audio: "songs/s1.mpeg",
+        artwork: "SONG_1_IMAGE_URL"
+      },
+      {
+        title: "Kunjikkavil Meghame",
+        artist: "JohnPaul George",
+        audio: "songs/s2.mpeg",
+        artwork: "SONG_2_IMAGE_URL"
+      },
+      {
+        title: "Aattuthottil",
+        artist: "P. Jayachandran",
+        audio: "songs/s3.mpeg",
+        artwork: "SONG_3_IMAGE_URL"
+      },
+      {
+        title: "Manathe Ambili",
+        artist: "Sithara",
+        audio: "songs/s4.mpeg",
+        artwork: "SONG_4_IMAGE_URL"
+      },
+      {
+        title: "Kannin Vaathil",
+        artist: "Gayathri Asokan",
+        audio: "songs/s5.mpeg",
+        artwork: "SONG_5_IMAGE_URL"
+      }
+    ];
+
+    /* Default fallback covers if artwork URLs are placeholders */
+    const fallbackArtworks = [
+      "image/b14.jpeg",
+      "image/b6.jpeg",
+      "image/b8.jpeg",
+      "image/b20.jpeg",
+      "image/b11.jpeg"
+    ];
+
+    /* Demo simulated durations for placeholders (seconds) */
+    const simulatedDurations = [195, 172, 210, 168, 204];
+
+    /* ------------------------------------------------------------ */
+    /* 2. STATE & AUDIO ENGINE SETUP                                */
+    /* ------------------------------------------------------------ */
+    let currentSongIndex = 0;
+    let isPlaying = false;
+    let isShuffle = false;
+    let isRepeat = false;
+    let isDraggingProgress = false;
+    let isFavorite = false;
+
+    // Single shared HTML5 Audio Element for all 5 songs
+    const sharedAudio = new Audio();
+    sharedAudio.preload = "metadata";
+
+    // Web Audio API Synthesizer (Provides gentle baby lullaby tones when placeholder URLs are used)
+    let audioCtx = null;
+    let synthInterval = null;
+    let synthCurrentTime = 0;
+    const lullabyNotes = [523.25, 659.25, 783.99, 987.77, 1046.50, 783.99, 659.25, 523.25];
+    let noteStep = 0;
+
+    function isPlaceholderAudio(url) {
+      return !url || url.includes("SONG_") || url === "PASTE_YOUR_MUSIC_LINK_HERE";
+    }
+
+    function initAudioContext() {
+      if (!audioCtx && (window.AudioContext || window.webkitAudioContext)) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx && audioCtx.state === "suspended") {
+        audioCtx.resume();
+      }
+    }
+
+    function playGentleLullabyNote() {
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        const freq = lullabyNotes[noteStep % lullabyNotes.length];
+        noteStep++;
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.045, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 1.25);
+      } catch (e) { }
+    }
+
+    /* ------------------------------------------------------------ */
+    /* 3. DOM ELEMENTS                                              */
+    /* ------------------------------------------------------------ */
+    const musicPlayerWrapper = document.getElementById("musicPlayerWrapper");
+    const musicPlayer = document.getElementById("musicPlayer");
+    const musicPillToggle = document.getElementById("musicPillToggle");
+    const musicPillText = document.getElementById("musicPillText");
+    const musicPillStatus = document.getElementById("musicPillStatus");
+    const musicMinimizeBtn = document.getElementById("musicMinimizeBtn");
+
+    const musicArtworkImg = document.getElementById("musicArtworkImg");
+    const musicTitle = document.getElementById("musicTitle");
+    const musicArtist = document.getElementById("musicArtist");
+    const musicFavBtn = document.getElementById("musicFavBtn");
+
+    const musicProgressBar = document.getElementById("musicProgressBar");
+    const musicProgressFilled = document.getElementById("musicProgressFilled");
+    const musicProgressThumb = document.getElementById("musicProgressThumb");
+    const musicCurrentTime = document.getElementById("musicCurrentTime");
+    const musicTotalTime = document.getElementById("musicTotalTime");
+
+    const musicShuffleBtn = document.getElementById("musicShuffleBtn");
+    const musicPrevBtn = document.getElementById("musicPrevBtn");
+    const musicPlayBtn = document.getElementById("musicPlayBtn");
+    const musicIconPlay = document.getElementById("musicIconPlay");
+    const musicIconPause = document.getElementById("musicIconPause");
+    const musicNextBtn = document.getElementById("musicNextBtn");
+    const musicRepeatBtn = document.getElementById("musicRepeatBtn");
+    const musicCodeBars = document.getElementById("musicCodeBars");
+
+    /* ------------------------------------------------------------ */
+    /* 4. UTILITY FUNCTIONS                                         */
+    /* ------------------------------------------------------------ */
+    function formatTime(seconds) {
+      if (isNaN(seconds) || seconds < 0) return "0:00";
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return mins + ":" + (secs < 10 ? "0" : "") + secs;
+    }
+
+    function getCurrentDuration() {
+      const song = playlist[currentSongIndex];
+      if (isPlaceholderAudio(song.audio)) {
+        return simulatedDurations[currentSongIndex % simulatedDurations.length];
+      }
+      return sharedAudio.duration || 0;
+    }
+
+    function getCurrentTime() {
+      const song = playlist[currentSongIndex];
+      if (isPlaceholderAudio(song.audio)) {
+        return synthCurrentTime;
+      }
+      return sharedAudio.currentTime || 0;
+    }
+
+    /* ------------------------------------------------------------ */
+    /* 5. LOAD SONG                                                 */
+    /* ------------------------------------------------------------ */
+    function loadSong(index, autoPlay = false) {
+      currentSongIndex = (index + playlist.length) % playlist.length;
+      const song = playlist[currentSongIndex];
+
+      // Update text
+      musicTitle.textContent = song.title;
+      musicArtist.textContent = song.artist;
+      musicPillText.textContent = song.title;
+
+      // Update artwork with smooth fade/scale transition
+      musicArtworkImg.classList.add("changing");
+      setTimeout(() => {
+        const fallback = fallbackArtworks[currentSongIndex % fallbackArtworks.length];
+        if (!song.artwork || song.artwork.includes("SONG_")) {
+          musicArtworkImg.src = fallback;
+        } else {
+          musicArtworkImg.src = song.artwork;
+          musicArtworkImg.onerror = () => {
+            musicArtworkImg.src = fallback;
+          };
+        }
+        musicArtworkImg.onload = () => {
+          musicArtworkImg.classList.remove("changing");
+        };
+      }, 150);
+
+      // Reset progress
+      synthCurrentTime = 0;
+      updateProgressUI(0, getCurrentDuration());
+
+      // Prepare Audio Source
+      if (!isPlaceholderAudio(song.audio)) {
+        sharedAudio.src = song.audio;
+        sharedAudio.load();
+      } else {
+        sharedAudio.pause();
+        sharedAudio.removeAttribute("src");
+      }
+
+      if (autoPlay) {
+        playSong();
+      } else {
+        pauseSong();
+      }
+    }
+
+    /* ------------------------------------------------------------ */
+    /* 6. PLAY / PAUSE CONTROLS                                     */
+    /* ------------------------------------------------------------ */
+    function playSong() {
+      initAudioContext();
+      const song = playlist[currentSongIndex];
+
+      if (!isPlaceholderAudio(song.audio)) {
+        if (!sharedAudio.src || !sharedAudio.src.includes(song.audio)) {
+          sharedAudio.src = song.audio;
+        }
+        const playPromise = sharedAudio.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              isPlaying = true;
+              updatePlayPauseUI(true);
+              hideMusicMsgBox();
+            })
+            .catch((err) => {
+              console.log("Audio playback notice:", err.message || err);
+              isPlaying = false;
+              updatePlayPauseUI(false);
+              showTapToPlayPrompt();
+              enableOneTouchUnlock();
+            });
+        }
+      } else {
+        startSyntheticPlayback();
+        isPlaying = true;
+        updatePlayPauseUI(true);
+        hideMusicMsgBox();
+      }
+    }
+
+    function pauseSong() {
+      isPlaying = false;
+      sharedAudio.pause();
+      stopSyntheticPlayback();
+      updatePlayPauseUI(false);
+    }
+
+    function togglePlay() {
+      if (isPlaying) {
+        pauseSong();
+      } else {
+        playSong();
+      }
+    }
+
+    function updatePlayPauseUI(playing) {
+      if (playing) {
+        musicIconPlay.style.display = "none";
+        musicIconPause.style.display = "block";
+        musicPlayBtn.classList.add("playing");
+        musicPlayBtn.setAttribute("aria-label", "Pause song");
+        musicPillStatus.textContent = "❚❚";
+        musicPillToggle.classList.add("playing");
+        musicCodeBars.classList.add("playing");
+      } else {
+        musicIconPlay.style.display = "block";
+        musicIconPause.style.display = "none";
+        musicPlayBtn.classList.remove("playing");
+        musicPlayBtn.setAttribute("aria-label", "Play song");
+        musicPillStatus.textContent = "▶";
+        musicPillToggle.classList.remove("playing");
+        musicCodeBars.classList.remove("playing");
+      }
+    }
+
+    /* ------------------------------------------------------------ */
+    /* 7. SYNTHETIC PLAYBACK FOR PLACEHOLDER AUDIO                  */
+    /* ------------------------------------------------------------ */
+    function startSyntheticPlayback() {
+      stopSyntheticPlayback();
+      playGentleLullabyNote();
+      synthInterval = setInterval(() => {
+        if (!isDraggingProgress) {
+          synthCurrentTime += 1;
+          const duration = getCurrentDuration();
+          if (synthCurrentTime % 2 === 0) {
+            playGentleLullabyNote();
+          }
+          if (synthCurrentTime >= duration) {
+            handleSongEnd();
+          } else {
+            updateProgressUI(synthCurrentTime, duration);
+          }
+        }
+      }, 1000);
+    }
+
+    function stopSyntheticPlayback() {
+      if (synthInterval) {
+        clearInterval(synthInterval);
+        synthInterval = null;
+      }
+    }
+
+    /* ------------------------------------------------------------ */
+    /* 8. NEXT, PREVIOUS, SHUFFLE & REPEAT                          */
+    /* ------------------------------------------------------------ */
+    function nextSong() {
+      let nextIdx;
+      if (isShuffle && playlist.length > 1) {
+        do {
+          nextIdx = Math.floor(Math.random() * playlist.length);
+        } while (nextIdx === currentSongIndex);
+      } else {
+        nextIdx = (currentSongIndex + 1) % playlist.length;
+      }
+      loadSong(nextIdx, true);
+    }
+
+    function prevSong() {
+      const current = getCurrentTime();
+      // If played for > 3 seconds, restart current track
+      if (current > 3) {
+        seekTo(0);
+        if (!isPlaying) playSong();
+        return;
+      }
+
+      let prevIdx;
+      if (isShuffle && playlist.length > 1) {
+        do {
+          prevIdx = Math.floor(Math.random() * playlist.length);
+        } while (prevIdx === currentSongIndex);
+      } else {
+        prevIdx = (currentSongIndex - 1 + playlist.length) % playlist.length;
+      }
+      loadSong(prevIdx, true);
+    }
+
+    function handleSongEnd() {
+      if (isRepeat) {
+        seekTo(0);
+        playSong();
+      } else {
+        nextSong();
+      }
+    }
+
+    function toggleShuffle() {
+      isShuffle = !isShuffle;
+      musicShuffleBtn.classList.toggle("active", isShuffle);
+      musicShuffleBtn.setAttribute("aria-pressed", isShuffle);
+    }
+
+    function toggleRepeat() {
+      isRepeat = !isRepeat;
+      musicRepeatBtn.classList.toggle("active", isRepeat);
+      musicRepeatBtn.setAttribute("aria-pressed", isRepeat);
+    }
+
+    /* ------------------------------------------------------------ */
+    /* 9. PROGRESS BAR & DRAGGABLE SEEKING                          */
+    /* ------------------------------------------------------------ */
+    function updateProgressUI(currentTime, duration) {
+      if (duration <= 0) {
+        musicProgressFilled.style.width = "0%";
+        musicProgressThumb.style.left = "0%";
+        musicCurrentTime.textContent = "0:00";
+        musicTotalTime.textContent = "0:00";
+        return;
+      }
+      const pct = Math.min(100, Math.max(0, (currentTime / duration) * 100));
+      musicProgressFilled.style.width = pct + "%";
+      musicProgressThumb.style.left = pct + "%";
+      musicProgressBar.setAttribute("aria-valuenow", Math.round(pct));
+      musicCurrentTime.textContent = formatTime(currentTime);
+      musicTotalTime.textContent = formatTime(duration);
+    }
+
+    function seekToPercent(percent) {
+      const duration = getCurrentDuration();
+      const targetTime = (percent / 100) * duration;
+      seekTo(targetTime);
+    }
+
+    function seekTo(seconds) {
+      const song = playlist[currentSongIndex];
+      if (isPlaceholderAudio(song.audio)) {
+        synthCurrentTime = Math.max(0, Math.min(seconds, getCurrentDuration()));
+        updateProgressUI(synthCurrentTime, getCurrentDuration());
+      } else {
+        sharedAudio.currentTime = seconds;
+        updateProgressUI(sharedAudio.currentTime, getCurrentDuration());
+      }
+    }
+
+    function calculateProgressClickPercent(e) {
+      const rect = musicProgressBar.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const offsetX = clientX - rect.left;
+      let percent = (offsetX / rect.width) * 100;
+      return Math.min(100, Math.max(0, percent));
+    }
+
+    // Progress Click & Drag Event Listeners
+    musicProgressBar.addEventListener("click", (e) => {
+      const pct = calculateProgressClickPercent(e);
+      seekToPercent(pct);
+    });
+
+    function handleDragMove(e) {
+      if (!isDraggingProgress) return;
+      const pct = calculateProgressClickPercent(e);
+      const duration = getCurrentDuration();
+      const previewTime = (pct / 100) * duration;
+      updateProgressUI(previewTime, duration);
+    }
+
+    function handleDragEnd(e) {
+      if (!isDraggingProgress) return;
+      isDraggingProgress = false;
+      musicProgressBar.classList.remove("dragging");
+      const pct = calculateProgressClickPercent(e);
+      seekToPercent(pct);
+      window.removeEventListener("mousemove", handleDragMove);
+      window.removeEventListener("mouseup", handleDragEnd);
+      window.removeEventListener("touchmove", handleDragMove);
+      window.removeEventListener("touchend", handleDragEnd);
+    }
+
+    musicProgressBar.addEventListener("mousedown", (e) => {
+      isDraggingProgress = true;
+      musicProgressBar.classList.add("dragging");
+      window.addEventListener("mousemove", handleDragMove);
+      window.addEventListener("mouseup", handleDragEnd);
+    });
+
+    musicProgressBar.addEventListener("touchstart", (e) => {
+      isDraggingProgress = true;
+      musicProgressBar.classList.add("dragging");
+      window.addEventListener("touchmove", handleDragMove, { passive: true });
+      window.addEventListener("touchend", handleDragEnd);
+    });
+
+    // Shared HTML5 Audio Events
+    sharedAudio.addEventListener("timeupdate", () => {
+      if (!isDraggingProgress) {
+        updateProgressUI(sharedAudio.currentTime, sharedAudio.duration || 0);
+      }
+    });
+
+    sharedAudio.addEventListener("loadedmetadata", () => {
+      updateProgressUI(sharedAudio.currentTime, sharedAudio.duration);
+    });
+
+    sharedAudio.addEventListener("ended", () => {
+      handleSongEnd();
+    });
+
+    sharedAudio.addEventListener("play", () => {
+      isPlaying = true;
+      updatePlayPauseUI(true);
+      hideMusicMsgBox();
+    });
+
+    sharedAudio.addEventListener("pause", () => {
+      isPlaying = false;
+      updatePlayPauseUI(false);
+    });
+
+    /* ------------------------------------------------------------ */
+    /* 10. BUTTON EVENT LISTENERS & PROMPT HANDLING                 */
+    /* ------------------------------------------------------------ */
+    musicPlayBtn.addEventListener("click", togglePlay);
+    musicNextBtn.addEventListener("click", nextSong);
+    musicPrevBtn.addEventListener("click", prevSong);
+    musicShuffleBtn.addEventListener("click", toggleShuffle);
+    musicRepeatBtn.addEventListener("click", toggleRepeat);
+
+    // Heart / Favourite Button
+    musicFavBtn.addEventListener("click", () => {
+      isFavorite = !isFavorite;
+      musicFavBtn.classList.toggle("active", isFavorite);
+      musicFavBtn.setAttribute("aria-label", isFavorite ? "Remove from favourites" : "Save to favourites");
+    });
+
+    // Minimize & Floating Pill Launcher
+    function minimizePlayer() {
+      musicPlayer.classList.add("minimized");
+      musicPlayerWrapper.classList.add("is-minimized");
+    }
+
+    function expandPlayer() {
+      musicPlayer.classList.remove("minimized");
+      musicPlayerWrapper.classList.remove("is-minimized");
+    }
+
+    musicMinimizeBtn.addEventListener("click", minimizePlayer);
+    musicPillToggle.addEventListener("click", expandPlayer);
+
+    // Floating Tap-To-Play Prompt Controls
+    const musicMsgBox = document.getElementById("musicMsgBox");
+    const musicMsgText = document.getElementById("musicMsgText");
+
+    function showTapToPlayPrompt() {
+      if (!musicMsgBox) return;
+      if (musicMsgText) {
+        musicMsgText.textContent = "Tap to play music ♡";
+      }
+      musicMsgBox.style.display = "flex";
+      musicMsgBox.style.opacity = "1";
+      musicMsgBox.style.pointerEvents = "auto";
+    }
+
+    function hideMusicMsgBox() {
+      if (!musicMsgBox) return;
+      musicMsgBox.style.opacity = "0";
+      musicMsgBox.style.pointerEvents = "none";
+      setTimeout(() => {
+        if (isPlaying) {
+          musicMsgBox.style.display = "none";
+        }
+      }, 500);
+    }
+
+    // Reliable fallback for mobile/desktop browsers blocking unprompted autoplay
+    let userGestureRegistered = false;
+    function enableOneTouchUnlock() {
+      if (userGestureRegistered) return;
+
+      function onFirstUserGesture() {
+        if (userGestureRegistered || isPlaying) return;
+        userGestureRegistered = true;
+        ['click', 'touchstart', 'pointerdown', 'keydown'].forEach((evt) => {
+          document.removeEventListener(evt, onFirstUserGesture, true);
+        });
+        playSong();
+      }
+
+      ['click', 'touchstart', 'pointerdown', 'keydown'].forEach((evt) => {
+        document.addEventListener(evt, onFirstUserGesture, { once: true, capture: true });
+      });
+    }
+
+    if (musicMsgBox) {
+      musicMsgBox.addEventListener("click", function (e) {
+        e.stopPropagation();
+        userGestureRegistered = true;
+        playSong();
+      });
+    }
+
+    /* ------------------------------------------------------------ */
+    /* 11. INITIALIZE PLAYER & ATTEMPT AUTOMATIC PLAYBACK           */
+    /* ------------------------------------------------------------ */
+    function attemptAutoplay() {
+      initAudioContext();
+      const song = playlist[currentSongIndex];
+
+      if (!isPlaceholderAudio(song.audio)) {
+        if (!sharedAudio.src || !sharedAudio.src.includes(song.audio)) {
+          sharedAudio.src = song.audio;
+        }
+        const playPromise = sharedAudio.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              // Autoplay succeeded without user interaction
+              isPlaying = true;
+              updatePlayPauseUI(true);
+              hideMusicMsgBox();
+            })
+            .catch(() => {
+              // Autoplay with sound restricted by browser policy
+              isPlaying = false;
+              updatePlayPauseUI(false);
+              showTapToPlayPrompt();
+              enableOneTouchUnlock();
+            });
+        }
+      }
+    }
+
+    // Set first track as initial source
+    loadSong(0, false);
+    attemptAutoplay();
+
+    // Trigger secondary attempt when page finishes loading
+    window.addEventListener("load", function () {
+      if (!isPlaying) {
+        attemptAutoplay();
+      }
+    });
+
+    /* ------------------------------------------------------------ */
+    /* 12. SMOOTH BLUR SCROLL-BASED DISAPPEARANCE ANIMATION         */
+    /* ------------------------------------------------------------ */
+    let isMusicHidden = false;
+
+    function updateMusicPlayerScrollAnimation() {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+      // Hysteresis band: blur-dissolve at >150px, reappear at <=100px
+      if (!isMusicHidden && scrollY > 150) {
+        isMusicHidden = true;
+        musicPlayerWrapper.classList.add("music-hidden");
+      } else if (isMusicHidden && scrollY <= 100) {
+        isMusicHidden = false;
+        musicPlayerWrapper.classList.remove("music-hidden");
+      }
+    }
+
+    window.addEventListener("scroll", updateMusicPlayerScrollAnimation, { passive: true });
+    window.addEventListener("resize", updateMusicPlayerScrollAnimation, { passive: true });
+
+    // Initial check on page load
+    updateMusicPlayerScrollAnimation();
+
+    /* ------------------------------------------------------------ */
+    /* MUSIC MESSAGE BOX SCROLL BORDER TRANSITION                   */
+    /* ------------------------------------------------------------ */
+    (function () {
+      if (!musicMsgBox) return;
+
+      function updateMsgBoxBorder() {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (scrollY > 80) {
+          musicMsgBox.classList.add('msg-scrolled');
+        } else {
+          musicMsgBox.classList.remove('msg-scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', updateMsgBoxBorder, { passive: true });
+      updateMsgBoxBorder();
+    })();
+
+    /* ── Gallery carousel touch support ── */
+    (function () {
+      var vp = document.getElementById('galleryCarousel');
+      var track = document.getElementById('carouselTrack');
+      if (!vp || !track) return;
+
+      var startX = 0, isDragging = false, pausedAt = 0;
+
+      function getAnimOffset() {
+        var style = window.getComputedStyle(track);
+        var mat = new WebKitCSSMatrix(style.transform);
+        return mat.m41;
+      }
+
+      vp.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        track.style.animationPlayState = 'paused';
+        pausedAt = getAnimOffset();
+      }, { passive: true });
+
+      vp.addEventListener('touchmove', function (e) {
+        if (!isDragging) return;
+        var dx = e.touches[0].clientX - startX;
+        track.style.transform = 'translateX(' + (pausedAt + dx) + 'px)';
+      }, { passive: true });
+
+      vp.addEventListener('touchend', function () {
+        isDragging = false;
+        track.style.transform = '';
+        track.style.animationPlayState = 'running';
+      });
+    })();
+
+    /* ── Gallery 3D perspective — real-time rotateY per card ── */
+    (function () {
+      var vp = document.getElementById('galleryCarousel');
+      if (!vp) return;
+
+      var MAX_ANGLE = 28; /* max degrees of rotation at the edges */
+
+      function update3D() {
+        var vpRect = vp.getBoundingClientRect();
+        /* Only run when gallery is in view */
+        if (vpRect.bottom < 0 || vpRect.top > window.innerHeight) {
+          requestAnimationFrame(update3D);
+          return;
+        }
+        var vpCX = vpRect.left + vpRect.width * 0.5;
+        var halfW = vpRect.width * 0.52; /* normalise distance */
+
+        var items = vp.querySelectorAll('.carousel-item');
+        items.forEach(function (item) {
+          var r = item.getBoundingClientRect();
+          var cx = r.left + r.width * 0.5;
+          var dist = cx - vpCX;
+          /* clamp ratio to [-1, 1] */
+          var ratio = Math.max(-1, Math.min(1, dist / halfW));
+          /* negative: left-side items tilt right (+angle); right-side tilt left */
+          var angle = -(ratio * MAX_ANGLE).toFixed(2);
+          item.style.setProperty('--ry', angle + 'deg');
+        });
+
+        requestAnimationFrame(update3D);
+      }
+
+      update3D();
+    })();
+
+  </script>
+
+</body>
+
+</html>
