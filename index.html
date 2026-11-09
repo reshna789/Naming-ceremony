@@ -19,7 +19,7 @@
 <body>
 
   <!-- ============================================================ -->
-  <!-- PINTEREST-INSPIRED 5-SONG SPOTIFY MUSIC PLAYER              -->
+  <!-- PINTEREST-INSPIRED 3-SONG SPOTIFY MUSIC PLAYER              -->
   <!-- ============================================================ -->
   <div class="music-player-wrapper" id="musicPlayerWrapper">
     <!-- Collapsed Floating Pill Launcher -->
@@ -731,11 +731,11 @@
     });
 
     /* ============================================================ */
-    /* PINTEREST SPOTIFY 5-SONG MUSIC PLAYER SCRIPT                */
+    /* PINTEREST SPOTIFY 3-SONG MUSIC PLAYER SCRIPT                */
     /* ============================================================ */
 
     /* ------------------------------------------------------------ */
-    /* 1. PLAYLIST DATA (Easily edit your 5 songs here)            */
+    /* 1. PLAYLIST DATA (3 Songs)                                  */
     /* ------------------------------------------------------------ */
     const playlist = [
       {
@@ -755,18 +755,6 @@
         artist: "P. Jayachandran",
         audio: "songs/s3.mpeg",
         artwork: "SONG_3_IMAGE_URL"
-      },
-      {
-        title: "Manathe Ambili",
-        artist: "Sithara",
-        audio: "songs/s4.mpeg",
-        artwork: "SONG_4_IMAGE_URL"
-      },
-      {
-        title: "Kannin Vaathil",
-        artist: "Gayathri Asokan",
-        audio: "songs/s5.mpeg",
-        artwork: "SONG_5_IMAGE_URL"
       }
     ];
 
@@ -774,13 +762,11 @@
     const fallbackArtworks = [
       "image/b14.jpeg",
       "image/b6.jpeg",
-      "image/b8.jpeg",
-      "image/b20.jpeg",
-      "image/b11.jpeg"
+      "image/b8.jpeg"
     ];
 
     /* Demo simulated durations for placeholders (seconds) */
-    const simulatedDurations = [195, 172, 210, 168, 204];
+    const simulatedDurations = [195, 172, 210];
 
     /* ------------------------------------------------------------ */
     /* 2. STATE & AUDIO ENGINE SETUP                                */
@@ -792,7 +778,7 @@
     let isDraggingProgress = false;
     let isFavorite = false;
 
-    // Single shared HTML5 Audio Element for all 5 songs
+    // Single shared HTML5 Audio Element for all 3 songs
     const sharedAudio = new Audio();
     sharedAudio.preload = "metadata";
 
