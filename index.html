@@ -54,11 +54,21 @@
         </button>
       </div>
 
-      <!-- Large Square Album Artwork -->
+      <!-- Large Square Album Artwork with Hero Content -->
       <div class="music-artwork">
         <img id="musicArtworkImg" src="image/b1.jpeg" alt="Album Artwork" class="music-artwork-img">
-        <div class="music-artwork-overlay">
-          <span class="music-artwork-badge">♫ OUR LITTLE ONE</span>
+        <div class="music-artwork-hero">
+          <p class="hero-small">A Little Princess Is Here</p>
+
+          <h1>
+            Welcome
+            <span>to</span>
+            <b> Naming Ceremony</b>
+          </h1>
+
+          <p class="hero-desc">With hearts full of love, we invite you to celebrate</p>
+
+          <p class="hero-date">SUNDAY · 15 NOVEMBER 2026</p>
         </div>
       </div>
 
@@ -136,38 +146,9 @@
         </button>
       </div>
 
-      <!-- Spotify-Inspired Waveform / Barcode Code Decoration at the Bottom -->
-      <div class="music-waveform-decoration" id="musicWaveformDecoration" aria-hidden="true">
-        <span class="music-wave-doodle">♡</span>
-        <div class="music-spotify-code">
-          <svg class="music-code-logo" viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
-            <path
-              d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.306c-.216.353-.674.466-1.027.25-2.815-1.72-6.358-2.109-10.534-1.155-.403.092-.806-.157-.898-.56-.092-.403.157-.806.56-.898 4.567-1.042 8.498-.6 11.649 1.336.353.216.466.674.25 1.027zm1.468-3.264c-.272.441-.849.58-1.29.308-3.223-1.982-8.136-2.553-11.948-1.396-.499.151-1.03-.134-1.182-.633-.151-.499.134-1.03.633-1.182 4.358-1.323 9.775-.688 13.479 1.589.441.272.58.849.308 1.314zm.126-3.41c-3.865-2.295-10.237-2.507-13.916-1.39-.594.181-1.226-.157-1.407-.751-.181-.594.157-1.226.751-1.407 4.237-1.286 11.276-1.04 15.719 1.597.534.317.712 1.011.395 1.545-.317.534-1.011.712-1.542.406z" />
-          </svg>
-          <div class="music-code-bars" id="musicCodeBars">
-            <span style="height: 8px;"></span>
-            <span style="height: 16px;"></span>
-            <span style="height: 24px;"></span>
-            <span style="height: 12px;"></span>
-            <span style="height: 28px;"></span>
-            <span style="height: 9px;"></span>
-            <span style="height: 20px;"></span>
-            <span style="height: 26px;"></span>
-            <span style="height: 15px;"></span>
-            <span style="height: 11px;"></span>
-            <span style="height: 22px;"></span>
-            <span style="height: 29px;"></span>
-            <span style="height: 13px;"></span>
-            <span style="height: 18px;"></span>
-            <span style="height: 25px;"></span>
-            <span style="height: 9px;"></span>
-            <span style="height: 24px;"></span>
-            <span style="height: 14px;"></span>
-            <span style="height: 20px;"></span>
-            <span style="height: 10px;"></span>
-          </div>
-        </div>
-        <span class="music-wave-doodle">✦</span>
+      <!-- View Invitation Button in Waveform Previous Position -->
+      <div class="music-invitation-wrapper">
+        <a href="#venue" class="hero-button">View Invitation</a>
       </div>
     </div>
   </div>
@@ -191,21 +172,7 @@
 
   <!-- HERO -->
   <header class="hero" id="home">
-    <div class="hero-content">
-      <p class="hero-small">A Little Princess Is Here</p>
-
-      <h1>
-        Welcome
-        <span>to</span>
-        <b> Naming Ceremony</b>
-      </h1>
-
-      <p>With hearts full of love, we invite you to celebrate</p>
-
-      <p class="hero-date">SUNDAY · 15 NOVEMBER 2026</p>
-
-      <a href="#venue" class="hero-button">View Invitation</a>
-    </div>
+    
   </header>
 
   <!-- INTRODUCTION -->
@@ -983,7 +950,7 @@
         musicPlayBtn.setAttribute("aria-label", "Pause song");
         musicPillStatus.textContent = "❚❚";
         musicPillToggle.classList.add("playing");
-        musicCodeBars.classList.add("playing");
+        if (musicCodeBars) musicCodeBars.classList.add("playing");
       } else {
         musicIconPlay.style.display = "block";
         musicIconPause.style.display = "none";
@@ -991,7 +958,7 @@
         musicPlayBtn.setAttribute("aria-label", "Play song");
         musicPillStatus.textContent = "▶";
         musicPillToggle.classList.remove("playing");
-        musicCodeBars.classList.remove("playing");
+        if (musicCodeBars) musicCodeBars.classList.remove("playing");
       }
     }
 
